@@ -9,33 +9,37 @@ public class Main {
     }
     public static void task4() {
         System.out.println("Задание 4");
+        int contribution = 12_000_000;
         int bankAccount = 15000;
-        for (int i = 1; bankAccount <= 12_000_000; i++) {
-            System.out.println("Месяц " + i + ", на счету " + bankAccount);
-            bankAccount = bankAccount + (bankAccount * 7 / 100);
+        int percent = 7;
+        for (int year = 1; bankAccount <= contribution; year++) {
+            System.out.println("Месяц " + year + ", на счету " + bankAccount);
+            bankAccount = bankAccount + (bankAccount * percent/100);
         }
     }
     public static void task5() {
         System.out.println("Задание 5");
-        int contribution = 15000;
-        int bankAccount = 0;
-        bankAccount = bankAccount + contribution;
-        for (int i = 1; bankAccount < 12_000_000; i++) {
-            if (i % 6 == 0) {
-                System.out.println("Месяц " + i + " Итого: " + bankAccount);
+        int contribution = 12_000_000;
+        int bankAccount = 15000;
+        int percent = 7;
+        for (int year = 1; bankAccount <= contribution; year++) {
+            if (year % 6 == 0) {
+                System.out.println("Месяц " + year + ", на счету " + bankAccount);
             }
-            bankAccount = bankAccount + bankAccount * 7 / 100;
+            bankAccount = bankAccount + (bankAccount * percent/100);
         }
         System.out.println(bankAccount);
     }
     public static void task6() {
         System.out.println("Задание 6");
         int bankAccount = 15000;
-        for (int year = 1; year <= 108; year++) {
+        int percent = 7;
+        int saveUp = 9*12;
+        for (int year = 1; year <= saveUp; year++) {
             if (year % 6 == 0) {
                 System.out.println("Месяц " + year + " Итого: " + bankAccount);
             }
-            bankAccount = bankAccount + (bankAccount * 7 / 100);
+            bankAccount = bankAccount + (bankAccount * percent / 100);
         }
     }
     public static void task7() {
@@ -46,8 +50,11 @@ public class Main {
     }
     public static void task8() {
         System.out.println("Задание 8");
-        for (int year = 0; year<=2122; year = year +79){
-            if (year >= 1822) {
+        int now = 2022;
+        int before = now-200;
+        int future = now + 100;
+        for (int year = 0; year<=future; year = year +79){
+            if (year >= before) {
                 System.out.println(year);
             }
         }
@@ -55,12 +62,15 @@ public class Main {
     public static void task9() {
         // 2-ой способ 8-го задания через while
         System.out.println("Задание 8.1");
-            int i = 79;
-            while (i<=2122) {
-                if (i >= 1822) {
-                    System.out.println(i);
+        int year = 79;
+        int now = 2022;
+        int before = now-200;
+        int future = now + 100;
+            while (year <= future) {
+                if (year >= before) {
+                    System.out.println(year);
                 }
-                i = i + 79;
+                year = year + 79;
             }
     }
 }
